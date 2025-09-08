@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CCC HUB</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px;
+      background-color: #222;
+      border-bottom: 2px solid #ff9000;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #ff9000;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 30px;
+    }
+
+    .video-card {
+      background-color: #1a1a1a;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .video-card h2 {
+      margin-top: 0;
+      color: #ffa733;
+    }
+
+    .thumbnail {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.02);
+    }
+
+    video {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #222;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="ccc.jpg" alt="Logo" />
+    <h1>Videos</h1>
+  </header>
+
+  <main>
+    <section class="video-card">
+      <h2>PAJO DAILY VLOG</h2>
+      <a href="#vid1"><img src="vlogdar.png" alt="Nature Walk Thumbnail" class="thumbnail" /></a>
+      <video id="vid1" controls>
+        <source src="darrenvlog.mp4" type="video/mp4" />
+       
+      </video>
+    </section>
+
+    <section class="video-card">
+      <h2>Video 2: Cooking Demo</h2>
+      <a href="#vid2"><img src="thumb2.jpg" alt="Cooking Demo Thumbnail" class="thumbnail" /></a>
+      <video id="vid2" controls>
+        <source src="video2.mp4" type="video/mp4" />
+        
+      </video>
+    </section>
+
+    <section class="video-card">
+      <h2>Video 3: Tech Review</h2>
+      <a href="#vid3"><img src="thumb3.jpg" alt="Tech Review Thumbnail" class="thumbnail" /></a>
+      <video id="vid3" controls>
+        <source src="video3.mp4" type="video/mp4" />
+       
+      </video>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CCC</p>
+  </footer>
+</body>
+</html>
