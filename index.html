@@ -1,13 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>CCC Company</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url('https://wallpaperaccess.com/full/3915891.jpg'); 
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    main {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .members {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .member {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+    }
+
+    .member h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .member p {
+      margin: 5px 0 0;
+      font-size: 16px;
+      color: #ddd;
+    }
+
+    button {
+      margin-top: 30px;
+      background-color: #00aaff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0088cc;
+    }
+  </style>
 </head>
 <body>
-    <p>
-        
-    </p>
+
+  <header>
+    <img src="ccc.png" alt="CCC Logo"> <!-- Replace with your actual logo -->
+    <h1>CCC</h1>
+  </header>
+
+  <main>
+    <p>Welcome to CCC, your trusted partner in innovation and excellence.</p>
+    
+    <div class="members">
+      <div class="member">
+        <h3>CLARA</h3>
+        <p>CEO</p>
+      </div>
+      <div class="member">
+        <h3>CLARIE</h3>
+        <p>Lead Developer</p>
+      </div>
+      <div class="member">
+        <h3>CLARE</h3>
+        <p>Project Manager</p>
+      </div>
+    </div>
+
+    <button>Learn More</button>
+  </main>
+
 </body>
 </html>
