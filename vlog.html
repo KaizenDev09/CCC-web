@@ -75,6 +75,14 @@
       margin-top: 10px;
     }
 
+    details summary {
+      list-style: none;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
     footer {
       text-align: center;
       padding: 10px;
@@ -94,29 +102,38 @@
   <main>
     <section class="video-card">
       <h2>PAJO DAILY VLOG</h2>
-      <a href="#vid1"><img src="vlogdar.png" alt="Nature Walk Thumbnail" class="thumbnail" /></a>
-      <video id="vid1" controls>
-        <source src="darrenvlog.mp4" type="video/mp4" />
-       
-      </video>
+      <details>
+        <summary>
+          <img src="vlogdar.png" alt="DAILY VLOG" class="thumbnail" />
+        </summary>
+        <video controls>
+          <source src="darrenvlog.mp4" type="video/mp4" />
+        </video>
+      </details>
     </section>
 
     <section class="video-card">
-      <h2>Video 2: Cooking Demo</h2>
-      <a href="#vid2"><img src="thumb2.jpg" alt="Cooking Demo Thumbnail" class="thumbnail" /></a>
-      <video id="vid2" controls>
-        <source src="video2.mp4" type="video/mp4" />
-        
-      </video>
+      <h2>miss na kita</h2>
+      <details>
+        <summary>
+          <img src="thumb2.jpg" alt="lungkot" class="thumbnail" />
+        </summary>
+        <video controls>
+          <source src="video2.mp4" type="video/mp4" />
+        </video>
+      </details>
     </section>
 
     <section class="video-card">
-      <h2>Video 3: Tech Review</h2>
-      <a href="#vid3"><img src="thumb3.jpg" alt="Tech Review Thumbnail" class="thumbnail" /></a>
-      <video id="vid3" controls>
-        <source src="video3.mp4" type="video/mp4" />
-       
-      </video>
+      <h2>hi boi</h2>
+      <details>
+        <summary>
+          <img src="thumb3.jpg" alt="Tech Review Thumbnail" class="thumbnail" />
+        </summary>
+        <video controls>
+          <source src="video3.mp4" type="video/mp4" />
+        </video>
+      </details>
     </section>
   </main>
 
