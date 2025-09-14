@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Darren's Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 50px;
+      background-color: #000;
+      color: #fff;
+    }
+    .header-left h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .header-right {
+      display: flex;
+      gap: 15px;
+    }
+    .header-button {
+      background-color: #fff;
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .header-button:hover {
+      background-color: #444;
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #000;
+      color: #fff;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    /* Section styles (full page backgrounds) */
+    section {
+      flex: 1;
+      min-height: 100vh; /* fill full page */
+      padding: 80px 20px 40px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: none;
+    }
+    #home {
+      display: block;
+      background-image: url("website bg.png"); /* replace with your file */
+      text-align: left;
+      margin-left: 40px;
+    }
+    #projects {
+      background-image: url("projects-bg.jpg"); /* replace with your file */
+      text-align: center;
+    }
+    #playlist {
+      background-image: url("playlist-bg.jpg"); /* replace with your file */
+      text-align: center;
+    }
+
+    /* Home section */
+    #home h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+    #home p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 500px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Projects section */
+    #projects video {
+      width: 90%;
+      max-width: 900px;
+      height: 500px;
+      border-radius: 10px;
+      background: #000;
+    }
+
+    /* Playlist section */
+    #spotifyUrl {
+      width: 70%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background-color: #222;
+      color: #eee;
+    }
+    #addBtn {
+      padding: 10px 16px;
+      background-color: #ff9000;
+      color: #111;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #addBtn:hover {
+      background-color: #ffa733;
+    }
+    #playlistContainer {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    .track {
+      background: rgba(0,0,0,0.6);
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      width: 100%;
+      max-width: 500px;
+    }
+    .removeBtn {
+      background: #ff4444;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: bold;
+    }
+    .removeBtn:hover {
+      background: #ff6666;
+    }
+    iframe {
+      border: none;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <h1>Darren</h1>
+    </div>
+    <div class="header-right">
+      <button class="header-button" onclick="showSection('home')">Home</button>
+      <button class="header-button" onclick="showSection('projects')">Projects</button>
+      <button class="header-button" onclick="showSection('playlist')">Playlist</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Home -->
+    <section id="home" class="active">
+      <h2>Darren</h2>
+      <p>
+        A MAWD student and passionate Graphic Designer.<br>
+        I create modern visuals and meaningful digital experiences.
+      </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>My Project</h2>
+      <video controls>
+        <source src="your-video.mp4" type="video/mp4" />
+        Your browser does not support video.
+      </video>
+    </section>
+
+    <!-- Playlist -->
+    <section id="playlist">
+      <h2>🎵 My Playlist</h2>
+      <input type="text" id="spotifyUrl" placeholder="Paste Spotify track URL here" />
+      <br />
+      <button id="addBtn" onclick="addSpotifyTrack()">Add Song</button>
+      <div id="playlistContainer"></div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Darren Pajo | All Rights Reserved
+  </footer>
+
+  <script>
+    // Section toggle
+    function showSection(id) {
+      document.querySelectorAll("main section").forEach(sec => sec.style.display = "none");
+      document.getElementById(id).style.display = "block";
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Load saved playlist + add Sparks by Coldplay if empty
+    window.onload = () => {
+      const saved = JSON.parse(localStorage.getItem("playlist")) || [];
+      if(saved.length === 0){
+        createTrack("https://open.spotify.com/embed/track/0QFC4DNQEwcuFSqmaGeCIL");
+      } else {
+        saved.forEach(url => createTrack(url));
+      }
+    };
+
+    function addSpotifyTrack() {
+      const url = document.getElementById('spotifyUrl').value.trim();
+      if (!url.includes("open.spotify.com/track/")) {
+        alert("Please enter a valid Spotify track URL.");
+        return;
+      }
+      const embedUrl = url.replace("https://open.spotify.com/track/", "https://open.spotify.com/embed/track/");
+      createTrack(embedUrl);
+
+      const saved = JSON.parse(localStorage.getItem("playlist")) || [];
+      saved.push(embedUrl);
+      localStorage.setItem("playlist", JSON.stringify(saved));
+
+      document.getElementById('spotifyUrl').value = '';
+    }
+
+    function createTrack(embedUrl) {
+      const container = document.getElementById('playlistContainer');
+      const div = document.createElement("div");
+      div.className = "track";
+      div.innerHTML = `
+        <iframe src="${embedUrl}?utm_source=generator" width="100%" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <button class="removeBtn">Remove</button>
+      `;
+      div.querySelector(".removeBtn").onclick = () => {
+        div.remove();
+        let saved = JSON.parse(localStorage.getItem("playlist")) || [];
+        saved = saved.filter(url => url !== embedUrl);
+        localStorage.setItem("playlist", JSON.stringify(saved));
+      };
+      container.appendChild(div);
+    }
+  </script>
+</body>
+</html>
