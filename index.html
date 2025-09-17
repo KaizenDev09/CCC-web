@@ -3,41 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CCC Corporation</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>My Vlog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      padding: 2rem;
+    }
+    .vlog-entry {
+      background: white;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .vlog-entry h2 {
+      margin-top: 0;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <h1>CCC Corporation</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <h1>CCC</h1>
+    <h2>Hello im <span class="highlight">John Louis T. Pascua</span></h2>
+    <p>One of the member of CCC Group from MAWD-103</p>
   </header>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>CCC Corporation is a forward-thinking company dedicated to delivering innovative solutions in tech, design, and strategy.</p>
-  </section>
-
-  <section id="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>Web Programing</li>
-      <li>Web Editing</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: info@ccc-corp.com</p>
-  </section>
+  <main>
+    <div class="vlog-entry">
+      <h2>My Vlog</h2>
+      <video width="100%" controls>
+        <source src="MicrosoftTeams-video.mp4" type="video/mp4">
+      </video>
+    </div>
+<center>
+    <div>
+      <h2>My favorite Song</h2>
+      <audio src="aura.mp3" controls loop></audio>
+    </div>
+  </main>
 
   <footer>
-    <p>&copy; 2025 CCC Corporation. All rights reserved.</p>
+    <p>&copy. John Louis T. Pascua MAWD-103</p>
   </footer>
+</center>
 </body>
 </html>
